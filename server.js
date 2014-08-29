@@ -4,18 +4,12 @@ var server = require('http').createServer(app)
 var io = require('socket.io').listen(server)
 var twitter = require('twitter')
 var tweetData;
+var port;
 
-//Configuring the server
-app.set("ipaddr", "127.0.0.1")
-app.set('port', '5000')
 
 
 //Specify where public content is
 app.use(express.static("public", __dirname + "/public"))
-
-// Welcome message
-server.listen('5000')
-console.log("Node server running at http://localhost:5000")
 
 //Routes
 app.get('/', function(req, resp) {
@@ -43,3 +37,10 @@ twitter.stream('filter', { 'locations': '-180,-90,180,90' }, function(stream) {
     };
   });
 })
+
+// Welcome message
+port = process.env.PORT || 3000
+
+server.listen(port, function() {
+  console.log("Node Server successfully listening on " + port);
+});
