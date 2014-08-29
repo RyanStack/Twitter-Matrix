@@ -14,7 +14,7 @@ app.set('port', '5000')
 app.use(express.static("public", __dirname + "/public"))
 
 // Welcome message
-server.listen(app.get("port"))
+server.listen(5000)
 console.log("Node server running at http://localhost:5000")
 
 //Routes
