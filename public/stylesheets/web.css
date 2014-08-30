@@ -1,6 +1,16 @@
 #map {
-  width: 100%;
+  width: 80%;
   height: 100%;
+  display: inline-block;
+  float: right;
+}
+
+#sidebar {
+  height: 100%;
+  width: 20%;
+  display: inline-block;
+  float: left;
+  background-color: black;
 }
 
 html, body {
@@ -20,5 +30,9 @@ header {
 }
 
 p {
+  color: #14BC14;
+}
+
+li {
   color: #14BC14;
 }

@@ -73,7 +73,17 @@ function displayAlgorithm(data) {
     for (var i=0; i<topTen.length; i++) {
       sorted.push(topTen[i][0]);
     }
-    trending.innerHTML = "10 Most Common: " + sorted.join(', ')
+    for (var i=0; i<sorted.length; i++) {
+      if ($('#trending').children().length < 10) {
+        var newLI = document.createElement("li");
+        trending.appendChild(newLI);
+        newLI.innerHTML = sorted[i];
+      }
+      else {
+        var newLI = document.createElement("li");
+        $('#trending')[0].children[i].innerHTML = sorted[i];
+      }
+    }
 
 
 
